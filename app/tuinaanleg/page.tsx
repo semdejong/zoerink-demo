@@ -5,7 +5,7 @@ import Werkbon from "@/components/photos/Werkbon";
 import WorkImage from "@/components/photos/WorkImage";
 import CtaBand from "@/components/site/CtaBand";
 import PageHero from "@/components/site/PageHero";
-import PegList from "@/components/site/PegList";
+import Uitzetstaat from "@/components/site/Uitzetstaat";
 import { OfferteLink, PhoneLink } from "@/components/site/Links";
 import { jobById, portraits } from "@/lib/photos";
 
@@ -37,26 +37,32 @@ export default function TuinaanlegPage() {
         </OfferteLink>
       </PageHero>
 
-      <section data-section="aanleg-wensen" className="wrap grid gap-10 pb-16 md:grid-cols-[1fr_minmax(0,450px)] md:items-start">
-        <div>
-          <h2 className="font-display text-3xl font-extrabold text-haag">Naar uw smaak, en functioneel</h2>
-          <Koord />
-          <p className="mt-5 max-w-2xl">
-            Voordat er geplant of bestraat wordt, kijken we wat de tuin moet kunnen. Dat verschilt per huis.
-          </p>
-          <PegList items={content.aanlegAandacht} />
-          <h2 className="mt-12 font-display text-3xl font-extrabold text-haag">Beplanting</h2>
-          <Koord />
-          <p className="mt-5 max-w-2xl">
-            De keuze van bloemen, planten, struiken en eventuele bomen komt pas nadat de plek bekeken is.
-          </p>
-          <PegList items={content.beplanting} />
-          <p className="mt-4 max-w-2xl">Daarna gaan bloemen, planten, struiken en eventuele bomen de grond in.</p>
-        </div>
+      <section data-section="aanleg-wensen" className="wrap grid items-start gap-10 pb-16 lg:grid-cols-[minmax(0,450px)_1fr]">
         <WorkImage
           photo={portraits.aanleg}
           sizes="450px"
           className="w-full max-w-[450px] border-[1.5px] border-haag"
+        />
+        <div>
+          <h2 className="font-display text-3xl font-extrabold text-haag">Eerst de lijn, dan de planten</h2>
+          <Koord />
+          <p className="mt-5 max-w-2xl">
+            Een compleet nieuwe tuin volgt uw smaak en moet werken. Ik kom graag bij u langs voor een vrijblijvend gesprek, waarin u uw wensen kenbaar kunt maken. Pas daarna gaan bloemen, planten, struiken en eventuele bomen de grond in.
+          </p>
+          <p className="mt-4 max-w-2xl">
+            Bestrating en schuttingen kunnen in dezelfde aanleg mee. Soms begint het werk met slopen: de bestaande tuin eruit, en dan opnieuw.
+          </p>
+        </div>
+      </section>
+
+      <section data-section="uitzetstaat" className="wrap pb-16">
+        <Uitzetstaat
+          title="Wat ik uit zet voor de eerste schep"
+          intro="Geen twee tuinen beginnen hetzelfde. Dit zijn de punten die ik met u langsloop."
+          columns={[
+            { heading: "De tuin moet kunnen", items: content.aanlegAandacht },
+            { heading: "Voor de beplanting kijk ik naar", items: content.beplanting },
+          ]}
         />
       </section>
 
@@ -66,7 +72,7 @@ export default function TuinaanlegPage() {
             <h2 className="font-display text-3xl font-extrabold text-haag">Uit het werk</h2>
             <Koord />
             <p className="mt-5 max-w-3xl">
-              Aanleg van particuliere tuinen, een voortuin, een moestuin met molensteen, betonnen bielzen-bakken en het slopen van een tuin voordat de nieuwe aanleg begint.
+              Zes klussen uit het archief. Particuliere tuinen, een voortuin, een moestuin met molensteen, betonnen bielzen-bakken, en het slopen van een tuin voordat de nieuwe aanleg begint. Elke reeks houdt de naam van het werk.
             </p>
           </div>
           {jobs.map((id) => (

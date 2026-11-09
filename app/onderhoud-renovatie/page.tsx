@@ -6,7 +6,7 @@ import Werkbon from "@/components/photos/Werkbon";
 import WorkImage from "@/components/photos/WorkImage";
 import CtaBand from "@/components/site/CtaBand";
 import PageHero from "@/components/site/PageHero";
-import PegList from "@/components/site/PegList";
+import Uitzetstaat from "@/components/site/Uitzetstaat";
 import { OfferteLink, PhoneLink } from "@/components/site/Links";
 import { jobById, portraits } from "@/lib/photos";
 
@@ -39,7 +39,9 @@ export default function OnderhoudPage() {
           <div className="mt-6 max-w-xl">
             <RitmeKiezer />
           </div>
-          <PegList items={content.onderhoudTaken} />
+          <p className="mt-4 max-w-2xl text-base">
+            Het ritme zet ik vast mee in de offerte. Weet u het nog niet, dan kiezen we dat in het gesprek.
+          </p>
         </div>
         <WorkImage
           photo={portraits.onderhoud}
@@ -48,12 +50,24 @@ export default function OnderhoudPage() {
         />
       </section>
 
+      <section data-section="beurt" className="wrap pb-16">
+        <Uitzetstaat
+          kicker="Tuinbeurt"
+          title="Wat er in een beurt kan zitten"
+          intro="Alles in overleg. Dit is wat ik noem als we samen het plan voor de tuinbeurt maken."
+          columns={[{ heading: "In de tuin", items: content.onderhoudTaken }]}
+        />
+      </section>
+
       <section data-section="renovatie" id="renovatie" className="bg-wit">
         <div className="wrap py-16">
           <h2 className="font-display text-3xl font-extrabold text-haag">Renovatie</h2>
           <Koord />
           <p className="mt-5 max-w-3xl">
-            Worden bomen of heesters te groot, of bent u uitgekeken op uw tuin? Dan maken we hem weer nieuw. Hieronder staat onder meer het verwijderen van conniferen en het frezen van stobben, op volgorde van het werk.
+            Worden bomen of heesters te groot, of bent u uitgekeken op uw tuin? Dan maken we hem weer nieuw. Soms is dat snoeien en scheuren. Soms gaat er meer uit, zoals bij conniferen verwijderen en stobben frezen: tien foto&apos;s, op volgorde van het werk.
+          </p>
+          <p className="mt-4 max-w-3xl">
+            Renovatie kan samengaan met nieuwe bestrating, een schutting, of het afvoeren van grond en afval. Dat spreken we uit bij u thuis.
           </p>
           <div className="mt-10">
             <Werkbon job={jobById("conniferen-verwijderen-en-stobben-frezen")} />

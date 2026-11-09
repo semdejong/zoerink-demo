@@ -22,7 +22,7 @@ export default function Werkbon({ job, variant = "strip", intro, moreHref, moreL
   return (
     <section data-section={`werkbon-${job.id}`} id={job.id} className="min-w-0">
       <h3 className="stamp">{job.stamp}</h3>
-      {intro ? <p className="mt-3 max-w-3xl">{intro}</p> : null}
+      {intro || job.blurb ? <p className="mt-3 max-w-3xl">{intro ?? job.blurb}</p> : null}
       <div className={variant === "strip" ? "photo-rail mt-4" : "mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3"}>
         {job.photos.map((photo, photoIndex) => (
           <button

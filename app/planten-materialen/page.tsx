@@ -27,21 +27,46 @@ export default function PlantenPage() {
         </OfferteLink>
       </PageHero>
 
-      <section data-section="levering" className="wrap grid gap-12 pb-16 md:grid-cols-2">
-        <div>
-          <h2 className="font-display text-3xl font-extrabold text-haag">Leveren</h2>
-          <Koord />
-          <PegList items={["Planten, struiken en bomen", "Stenen", "Zand", "Grind", "Grond"]} />
+      <section data-section="levering" className="wrap pb-16">
+        <div className="grid gap-12 md:grid-cols-2">
+          <div>
+            <h2 className="font-display text-3xl font-extrabold text-haag">Wat er geleverd wordt</h2>
+            <Koord />
+            <p className="mt-5">
+              Levering van planten, struiken en bomen, en van materialen: stenen, zand, grind en grond. Dat hoort bij het werk.
+            </p>
+            <PegList items={["Planten, struiken en bomen", "Stenen", "Zand", "Grind", "Grond"]} />
+          </div>
+          <div>
+            <h2 className="font-display text-3xl font-extrabold text-haag">Wat er weer weggaat</h2>
+            <Koord />
+            <p className="mt-5">
+              Afval en grond voer ik af. Dat kan bij een nieuwe aanleg, bij een renovatie en bij een tuinbeurt.
+            </p>
+            <p className="mt-4">
+              Bij het slopen van een tuin gaat het oude materiaal mee. Bij bestrating horen zand en stenen erbij, en de grond die vrijkomt voer ik af.
+            </p>
+            <p className="mt-6 flex flex-wrap gap-3">
+              <OfferteLink dienst="leveren" className="btn btn-koord">
+                Offerte voor levering
+              </OfferteLink>
+              <OfferteLink dienst="afvoeren" className="btn btn-line">
+                Offerte voor afvoer
+              </OfferteLink>
+            </p>
+          </div>
         </div>
-        <div>
-          <h2 className="font-display text-3xl font-extrabold text-haag">Afvoeren</h2>
-          <Koord />
-          <p className="mt-5">Afval en grond voer ik af. Dat kan bij aanleg, renovatie of een tuinbeurt.</p>
-          <p className="mt-6">
-            <OfferteLink dienst="afvoeren" className="btn btn-line">
-              Offerte voor afvoer
-            </OfferteLink>
-          </p>
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
+          {[
+            { href: "/tuinaanleg", title: "Bij de aanleg", text: "Bloemen, planten, struiken en eventuele bomen, nadat grondsoort, vocht en zon bekeken zijn." },
+            { href: "/bestrating-schuttingen", title: "Bij de bestrating", text: "Tegels, gebakken keiklinkers, natuursteen, grind en split. Eerst zand, dan het materiaal." },
+            { href: "/onderhoud-renovatie", title: "Bij onderhoud", text: "Haag, heesters en wat er bij een beurt vrijkomt. Afval en grond voer ik af." },
+          ].map((item) => (
+            <a key={item.href} href={item.href} className="border-[1.5px] border-koord bg-wit p-5">
+              <span className="font-display text-2xl font-extrabold text-haag">{item.title}</span>
+              <span className="mt-2 block">{item.text}</span>
+            </a>
+          ))}
         </div>
       </section>
 

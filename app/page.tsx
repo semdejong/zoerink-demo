@@ -9,9 +9,11 @@ import WorkImage from "@/components/photos/WorkImage";
 import Werkbon from "@/components/photos/Werkbon";
 import ContactBlock from "@/components/site/ContactBlock";
 import FaqList from "@/components/site/FaqList";
+import Kluslint from "@/components/site/Kluslint";
+import Veldstaat from "@/components/site/Veldstaat";
 import { OfferteLink, PhoneLink } from "@/components/site/Links";
 import PegList from "@/components/site/PegList";
-import { heroPhoto, jobById, photoByNumber, pickPhotos, portraits } from "@/lib/photos";
+import { heroPhoto, jobById, jobs, photoByNumber, pickPhotos, portraits } from "@/lib/photos";
 
 export default function Home() {
   const conniferen = jobById("conniferen-verwijderen-en-stobben-frezen");
@@ -201,6 +203,42 @@ export default function Home() {
               Meer over René
             </a>
           </p>
+        </div>
+      </section>
+
+      <Veldstaat jobs={jobs} />
+
+      <section data-section="archief" className="bg-zand">
+        <div className="wrap pt-16 md:pt-20">
+          <h2 className="font-display text-4xl font-extrabold text-haag md:text-5xl">Nog drie klussen</h2>
+          <Koord />
+          <p className="mt-5 max-w-3xl">
+            Een tuin in aanleg, bakken van betonnen bielzen, en een particuliere tuin die bijgehouden wordt. Meer staat op de fotopagina, per klus op een rij.
+          </p>
+          <div className="mt-8 grid gap-8 md:grid-cols-3">
+            {[
+              { id: "aanleg-tuin", n: 7 },
+              { id: "betonnen-bielzen-bakken", n: 5 },
+              { id: "onderhoud-particuliere-tuin", n: 6 },
+            ].map((item) => {
+              const job = jobById(item.id);
+              return (
+                <a key={item.id} href={`/fotos#${item.id}`} className="block text-ink">
+                  <WorkImage
+                    photo={photoByNumber(item.id, item.n)}
+                    framed
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    className="w-full border-[1.5px] border-haag"
+                  />
+                  <p className="stamp mt-3">{job.title}</p>
+                  <p className="mt-2 text-base">{job.blurb}</p>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+        <div className="mt-10">
+          <Kluslint jobs={jobs} />
         </div>
       </section>
 

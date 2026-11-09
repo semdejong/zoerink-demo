@@ -13,6 +13,8 @@ export type Job = {
   id: string;
   title: string;
   stamp: string;
+  /** Korte, gecontroleerde toelichting. Geen plaats, jaar of maat. */
+  blurb: string;
   /** Werkvolgorde: bijschriften als stap 1, stap 2, … */
   sequence: boolean;
   group: JobGroup;
@@ -45,16 +47,40 @@ function series(
     id,
     title,
     stamp: `${title.toUpperCase()} · ${countLabel}`,
+    blurb: "",
     sequence,
     group,
     photos,
   };
 }
 
+const blurbs: Record<string, string> = {
+  "aanleg-tuin-particulier":
+    "Een particuliere tuin met bloemen, planten en bestrating. Vijf foto's van dat werk.",
+  "aanleg-tuin": "Aanleg van een tuin, in zeven foto's.",
+  "aanleg-voortuin": "Een voortuin: bestrating en nieuwe beplanting.",
+  "aanleg-moestuin-met-molensteen":
+    "Een moestuin, met een molensteen als vast punt in de aanleg.",
+  "betonnen-bielzen-bakken":
+    "Bakken van betonnen bielzen. Vijf foto's, van links naar rechts de opbouw.",
+  "particuliere-tuin-slopen":
+    "Eerst de bestaande tuin eruit. Vier foto's, stap voor stap, voordat de nieuwe aanleg begint.",
+  "onderhoud-particuliere-tuin":
+    "Een particuliere tuin die bijgehouden wordt: gazon, hagen, heesters en borders.",
+  "gazon-verticuteren":
+    "Verticuteren van het gazon hoort bij het onderhoud. Drie foto's van die beurt.",
+  "winterbeurt-tuin":
+    "Een winterbeurt van een tuin, in drie foto's.",
+  "conniferen-verwijderen-en-stobben-frezen":
+    "Conniferen verwijderen en de stobben frezen. Tien foto's, in de volgorde van het werk.",
+  "onderhoud-landgoed-t-haveke":
+    "Onderhoud op Landgoed 't Haveke. Dertien foto's, ook op een groter terrein.",
+};
+
 const landschap: [number, number] = [1024, 768];
 const klein: [number, number] = [640, 480];
 
-export const jobs: Job[] = [
+const jobSeries: Job[] = [
   series(
     "aanleg-tuin-particulier",
     "Aanleg particuliere tuin",
@@ -171,6 +197,12 @@ export const jobs: Job[] = [
     "Onderhoud",
   ),
 ];
+
+export const jobs: Job[] = jobSeries.map((job) => {
+  const blurb = blurbs[job.id];
+  if (!blurb) throw new Error(`Toelichting ontbreekt: ${job.id}`);
+  return { ...job, blurb };
+});
 
 export const jobCount = jobs.reduce((sum, job) => sum + job.photos.length, 0);
 
