@@ -1,14 +1,40 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
+import { Bitter, Instrument_Sans, Overpass_Mono } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
+import MobileBar from "@/components/site/MobileBar";
+import ScrollTape from "@/components/graphics/ScrollTape";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const bitter = Bitter({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+  variable: "--font-bitter",
+  display: "swap",
+});
+
+const instrument = Instrument_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-instrument",
+  display: "swap",
+});
+
+const overpass = Overpass_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-overpass",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
+  title: {
+    default: content.seo.title,
+    template: "%s | René Zoerink",
+  },
   description: content.seo.description,
   robots: {
     index: false,
@@ -21,7 +47,6 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: content.colors.primary };
 
-// Sleads demo-analytics (cookieloos). Events tellen alleen voor slugs die via POST /api/demos geregistreerd zijn.
 const TRACKER_SRC = "https://sleads-demo-analytics.vercel.app/t.js";
 const TRACKER_ENDPOINT = "https://basic-tiger-117.convex.site/track";
 
@@ -37,12 +62,25 @@ const themeVars = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html
+      lang={content.seo.lang}
+      style={themeVars}
+      className={`${bitter.variable} ${instrument.variable} ${overpass.variable} h-full antialiased`}
+    >
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
       </head>
-      <body className="min-h-full flex flex-col">
-        {children}
+      <body className="flex min-h-full flex-col overflow-x-clip">
+        <a href="#inhoud" className="skip">
+          Naar inhoud
+        </a>
+        <ScrollTape />
+        <Header />
+        <div id="inhoud" className="flex-1">
+          {children}
+        </div>
+        <Footer />
+        <MobileBar />
         <SleadsBadge />
       </body>
     </html>

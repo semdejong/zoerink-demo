@@ -23,6 +23,17 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      { source: "/index.php", destination: "/", permanent: true },
+      { source: "/aanleg.php", destination: "/tuinaanleg", permanent: true },
+      { source: "/onderhoud.php", destination: "/onderhoud-renovatie", permanent: true },
+      { source: "/informatie.php", destination: "/over-rene", permanent: true },
+      { source: "/fotos.php", destination: "/fotos", permanent: true },
+      { source: "/links.php", destination: "/over-rene", permanent: true },
+      { source: "/privacy.php", destination: "/privacy", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

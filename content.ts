@@ -1,102 +1,213 @@
 /**
- * ÉÉN bestand om aan te passen per demo.
- * Kopieer de starter, vul hieronder de gegevens van de prospect in, klaar.
+ * Bedrijfsgegevens van Hoveniersbedrijf René Zoerink.
+ * Alleen feiten die het bedrijf zelf noemt. Geen openingstijden, prijzen,
+ * keurmerken, jaartallen of recensies: die zijn niet bekend.
  */
 export const content = {
-  // Slug = Vercel-project- en GitHub-reponaam (eindigt op "-demo"). Wordt door scripts/new-demo.sh gezet.
-  // Ook de "data-demo" voor de Sleads demo-analytics tracker.
   slug: "zoerink-demo",
 
   company: {
-    name: "Voorbeeldbedrijf",
-    tagline: "Vakmanschap uit de regio, sinds 1998",
+    name: "René Zoerink",
+    legalName: "Hoveniersbedrijf René Zoerink",
+    wordmark: "René Zoerink",
+    wordmarkSub: "Hoveniersbedrijf",
     description:
-      "Wij helpen particulieren en bedrijven met betrouwbaar werk, eerlijk advies en een persoonlijke aanpak.",
-    logo: "/logo.png", // zet het logo in /public en pas het pad aan ("" = alleen tekst)
-    city: "Utrecht",
+      "Een jong en dynamisch hoveniersbedrijf in Warnsveld. Tuinaanleg, onderhoud, renovatie, bestrating, schuttingen en levering, in één hand.",
+    logo: "",
+    city: "Warnsveld",
+    region: "Warnsveld, Zutphen, Lochem, Deventer en omgeving",
+    regionOwnWords: "de regio Warnsveld, Zutphen en Lochem",
   },
 
-  // Huisstijlkleuren van de prospect (hex)
   colors: {
-    primary: "#1d4ed8",
-    primaryForeground: "#ffffff",
-    accent: "#f59e0b",
-    background: "#ffffff",
-    foreground: "#0f172a",
-    muted: "#f1f5f9",
+    haag: "#12361F",
+    bos: "#1E5A2C",
+    lime: "#B8E33C",
+    koord: "#E8890C",
+    koordLicht: "#F79F1A",
+    schors: "#7D4400",
+    zand: "#F5F1E6",
+    wit: "#FFFFFF",
+    ink: "#1B1F1A",
+    primary: "#12361F",
+    primaryForeground: "#FFFFFF",
+    accent: "#E8890C",
+    background: "#F5F1E6",
+    foreground: "#1B1F1A",
+    muted: "#FFFFFF",
   },
 
   seo: {
-    title: "Voorbeeldbedrijf | Vakmanschap uit Utrecht",
-    description: "Conceptwebsite voor Voorbeeldbedrijf.",
+    title: "Hoveniersbedrijf René Zoerink | Warnsveld, Zutphen en Lochem",
+    description:
+      "Tuinaanleg, onderhoud en renovatie door René Zoerink in Warnsveld, Zutphen, Lochem, Deventer en omgeving. Bel 06-24621906 voor een vrijblijvend gesprek.",
     lang: "nl",
   },
 
+  contact: {
+    owner: "René Zoerink",
+    phoneDisplay: "06-24621906",
+    phoneHref: "tel:+31624621906",
+    email: "rene_zoerink@hotmail.com",
+    emailHref: "mailto:rene_zoerink@hotmail.com",
+    street: "Oude Borculoseweg 14",
+    postalCode: "7231 PR",
+    city: "Warnsveld",
+    kvk: "08188051",
+    kvkPlace: "Apeldoorn",
+    mapsHref:
+      "https://www.google.com/maps/search/?api=1&query=Oude+Borculoseweg+14,+7231+PR+Warnsveld",
+  },
+
   nav: [
-    { label: "Diensten", href: "#diensten" },
-    { label: "Over ons", href: "#over-ons" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Contact", href: "#contact" },
+    { label: "Tuinaanleg", href: "/tuinaanleg" },
+    { label: "Onderhoud & renovatie", href: "/onderhoud-renovatie" },
+    { label: "Bestrating & schuttingen", href: "/bestrating-schuttingen" },
+    { label: "Foto's", href: "/fotos" },
+    { label: "Over René", href: "/over-rene" },
+    { label: "Contact", href: "/contact" },
   ],
 
-  hero: {
-    title: "Vakwerk waar u op kunt bouwen",
-    subtitle:
-      "Snel geregeld, duidelijk geprijsd en netjes opgeleverd. Vraag vandaag nog vrijblijvend een offerte aan.",
-    primaryCta: { label: "Offerte aanvragen", href: "#contact" },
-    secondaryCta: { label: "Bekijk onze diensten", href: "#diensten" },
-    image: "", // bv. "/hero.jpg" in /public of een externe URL; leeg = kleurverloop
-    highlights: ["25+ jaar ervaring", "Gratis advies aan huis", "Garantie op al ons werk"],
-  },
+  footerNav: [
+    { label: "Tuinaanleg", href: "/tuinaanleg" },
+    { label: "Onderhoud & renovatie", href: "/onderhoud-renovatie" },
+    { label: "Bestrating & schuttingen", href: "/bestrating-schuttingen" },
+    { label: "Planten & materialen", href: "/planten-materialen" },
+    { label: "Foto's", href: "/fotos" },
+    { label: "Over René", href: "/over-rene" },
+    { label: "Contact", href: "/contact" },
+    { label: "Offerte aanvragen", href: "/offerte" },
+    { label: "Privacy", href: "/privacy" },
+  ],
 
-  services: {
-    title: "Onze diensten",
-    intro: "Alles onder één dak, van eerste advies tot oplevering.",
-    items: [
-      { icon: "🛠️", title: "Dienst één", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "📐", title: "Dienst twee", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-      { icon: "✅", title: "Dienst drie", text: "Korte omschrijving van wat deze dienst inhoudt en wat de klant eraan heeft." },
-    ],
-  },
+  visitLine:
+    "Ik kom graag bij u langs voor een vrijblijvend gesprek, waarin u uw wensen kenbaar kunt maken.",
 
-  about: {
-    title: "Over ons",
-    text: [
-      "Wat begon als een klein familiebedrijf is uitgegroeid tot een vertrouwd adres in de regio.",
-      "We werken met vaste vakmensen, houden ons aan afspraken en staan ook na de oplevering voor u klaar.",
-    ],
-    image: "", // optioneel
-    stats: [
-      { value: "25+", label: "jaar ervaring" },
-      { value: "1.200+", label: "tevreden klanten" },
-      { value: "9,2", label: "gemiddeld cijfer" },
-    ],
-  },
+  route: [
+    {
+      title: "Bellen",
+      text: "U belt 06-24621906, of u vult de offerteaanvraag in. Bellen is het meest directe.",
+    },
+    {
+      title: "René komt langs",
+      text: "Ik kom graag bij u langs voor een vrijblijvend gesprek, waarin u uw wensen kenbaar kunt maken.",
+    },
+    {
+      title: "Plan en offerte",
+      text: "Samen bepalen we wat er moet gebeuren: aanleg, onderhoud, renovatie, bestrating of een schutting.",
+    },
+    {
+      title: "Aan de slag",
+      text: "Daarna voer ik het werk uit. Aanleg, onderhoud, straatwerk, schuttingen en levering zitten in één hand.",
+    },
+  ],
 
-  reviews: {
-    title: "Wat klanten zeggen",
-    items: [
-      { name: "Familie Jansen", text: "Netjes en snel gewerkt, precies volgens afspraak. Echt een aanrader!", rating: 5 },
-      { name: "Petra de Vries", text: "Duidelijke communicatie en een eerlijke prijs. We komen zeker terug.", rating: 5 },
-      { name: "Mark Bakker", text: "Vakkundig advies en mooi resultaat. Heel tevreden.", rating: 5 },
-    ],
-  },
+  services: [
+    {
+      href: "/tuinaanleg",
+      title: "Tuinaanleg",
+      text: "Een nieuwe tuin met bloemen, planten, bestrating en schuttingen. Naar uw smaak, en zo dat de tuin werkt.",
+    },
+    {
+      href: "/onderhoud-renovatie",
+      title: "Onderhoud",
+      text: "Wekelijks, maandelijks of enkele keren per jaar een tuinbeurt. Alles in overleg.",
+    },
+    {
+      href: "/onderhoud-renovatie#renovatie",
+      title: "Renovatie",
+      text: "Worden bomen of heesters te groot, of bent u uitgekeken op uw tuin? Dan maken we hem weer nieuw.",
+    },
+    {
+      href: "/bestrating-schuttingen",
+      title: "Bestrating",
+      text: "Tegels, gebakken keiklinkers, natuursteen, grind en split. Eerst een goede ondergrond, dan het materiaal van uw keuze.",
+    },
+    {
+      href: "/bestrating-schuttingen#schuttingen",
+      title: "Schuttingen en hekwerken",
+      text: "Schuttingen en hekwerken plaatsen en leveren.",
+    },
+  ],
 
-  contact: {
-    title: "Neem contact op",
-    text: "Bel, mail of kom langs. We reageren binnen één werkdag.",
-    phone: "030 123 45 67",
-    email: "info@voorbeeldbedrijf.nl",
-    address: "Voorbeeldstraat 1, 1234 AB Utrecht",
-    openingHours: ["Ma t/m vr: 08:00 – 17:30", "Za: 09:00 – 13:00"],
-    whatsapp: "", // bv. "31612345678" (zonder +)
-    cta: { label: "Bel direct", href: "tel:0301234567" },
-  },
+  bestratingStappen: [
+    {
+      title: "Uitgraven",
+      text: "Eerst graven we de plek uit.",
+      jobId: "betonnen-bielzen-bakken",
+      photoN: 3,
+    },
+    {
+      title: "Opvullen met zand",
+      text: "Daarna vullen we op met zand.",
+      jobId: "particuliere-tuin-slopen",
+      photoN: 1,
+    },
+    {
+      title: "Aantrillen",
+      text: "Het zandbed wordt aangetrild, voor een goede ondergrond.",
+      jobId: "particuliere-tuin-slopen",
+      photoN: 2,
+    },
+    {
+      title: "Verwerken",
+      text: "Tot slot verwerken we het materiaal van uw keuze.",
+      jobId: "aanleg-tuin-particulier",
+      photoN: 3,
+    },
+  ],
 
-  footer: {
-    kvk: "", // bv. "KvK 12345678"
-    socials: [] as { label: string; href: string }[],
-  },
+  bestratingMaterialen: ["Tegels", "Gebakken keiklinkers", "Natuursteen", "Grind en split"],
+
+  onderhoudTaken: [
+    "Haag knippen",
+    "Onkruid wieden",
+    "Verticuteren van uw gazon",
+    "Vaste planten scheuren",
+    "Heesters uitsnoeien",
+  ],
+
+  onderhoudRitmes: [
+    { id: "wekelijks", label: "Wekelijks" },
+    { id: "maandelijks", label: "Maandelijks" },
+    { id: "enkele-keren", label: "Enkele keren per jaar" },
+  ],
+
+  aanlegAandacht: [
+    "(Kleine) kinderen",
+    "Wel of geen vijver",
+    "Speeltoestellen",
+    "Een terras in de zon",
+  ],
+
+  beplanting: ["Grondsoort", "Vochthuishouding", "Zon- en schaduwzijde"],
+
+  faq: [
+    {
+      q: "Komt u eerst langs?",
+      a: "Ja. Ik kom graag bij u langs voor een vrijblijvend gesprek, waarin u uw wensen kenbaar kunt maken.",
+    },
+    {
+      q: "Hoe vaak kan onderhoud?",
+      a: "Wekelijks, maandelijks of maar enkele keren per jaar een tuinbeurt, alles in overleg.",
+    },
+    {
+      q: "Doet u ook bestrating en schuttingen?",
+      a: "Ja. Klein straatwerk met tegels, gebakken keiklinkers, natuursteen, grind en split, en het plaatsen en leveren van schuttingen en hekwerken.",
+    },
+    {
+      q: "Levert u planten en materialen?",
+      a: "Ja. Planten, struiken en bomen, en materialen zoals stenen, zand, grind en grond.",
+    },
+    {
+      q: "Voert u grond en afval af?",
+      a: "Ja. Ik voer afval en grond af.",
+    },
+    {
+      q: "In welke regio werkt u?",
+      a: "In de regio Warnsveld, Zutphen, Lochem, Deventer en omgeving.",
+    },
+  ],
 };
 
 export type Content = typeof content;
