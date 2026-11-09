@@ -19,7 +19,7 @@ export default function RitmeKiezer() {
               role="radio"
               aria-checked={selected}
               onClick={() => setRitme(item.id)}
-              className={`min-h-11 border-[1.5px] border-haag px-3 text-left font-semibold ${selected ? "bg-haag text-white" : "bg-wit text-haag"}`}
+              className={`min-h-11 border-[1.5px] px-3 text-left font-semibold ${selected ? "border-lime bg-haag text-white" : "border-haag bg-wit text-haag"}`}
             >
               {item.label}
             </button>

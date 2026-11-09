@@ -6,7 +6,7 @@ export default function SleadsBadge() {
       target="_blank"
       rel="noopener"
       aria-label="Concept door Sleads – bekijk sleads.nl"
-      className="fixed bottom-24 left-3 z-30 inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white/85 px-3 py-1.5 text-[11px] font-medium text-neutral-700 shadow-sm backdrop-blur transition hover:bg-white hover:text-black md:bottom-4 md:left-4 md:z-50 md:text-xs print:hidden"
+      className="absolute top-1/2 right-2 z-10 inline-flex -translate-y-1/2 items-center gap-1.5 rounded-full border border-haag/15 bg-white px-2 py-0.5 text-[10px] font-medium text-neutral-700 shadow-sm transition hover:text-black md:right-4 md:text-[11px] print:hidden"
     >
       <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" aria-hidden />
       Concept door <span className="font-semibold">Sleads</span>

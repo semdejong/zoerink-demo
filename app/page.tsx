@@ -19,14 +19,14 @@ export default function Home() {
   const conniferen = jobById("conniferen-verwijderen-en-stobben-frezen");
   const landgoed = pickPhotos(
     "onderhoud-landgoed-t-haveke",
-    [1, 4, 6, 8, 11, 13],
+    [1, 4, 6, 9, 11, 13],
     "ONDERHOUD LANDGOED 'T HAVEKE · 6 FOTO'S",
   );
   const bestrating = content.bestratingStappen.map((step) => ({
     title: step.title,
     text: step.text,
     photo: photoByNumber(step.jobId, step.photoN),
-    photoCaption: jobById(step.jobId).title,
+    photoCaption: `Foto uit: ${jobById(step.jobId).title}`,
   }));
 
   return (

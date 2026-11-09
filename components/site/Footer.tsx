@@ -9,7 +9,7 @@ export default function Footer() {
     <footer data-section="footer" className="mt-auto">
       <Meetlint numerals={false} className="h-[10px]" />
       <div className="bg-haag text-zand">
-        <div className="wrap grid gap-10 py-12 pb-28 md:grid-cols-[1.4fr_1fr_1fr] md:pb-16">
+        <div className="wrap grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <p className="font-display text-3xl font-extrabold text-white">{company.wordmark}</p>
             <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-lime">{company.wordmarkSub}</p>
@@ -47,7 +47,7 @@ export default function Footer() {
             </address>
           </div>
         </div>
-        <div className="wrap flex flex-col gap-2 border-t border-white/15 py-4 pb-28 text-sm text-zand md:flex-row md:items-center md:justify-between md:pb-6">
+        <div className="wrap flex flex-col gap-2 border-t border-white/15 py-4 pb-24 text-sm text-zand md:flex-row md:items-center md:justify-between md:pb-4">
           <p>KvK {contact.kvk} · {company.legalName}</p>
           <a href="https://sleads.nl" target="_blank" rel="noopener" className="inline-flex min-h-11 items-center text-lime">
             Concept door Sleads

@@ -75,7 +75,7 @@ export default function OverPage() {
         <Koord />
         <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {handen.map((item) => (
-            <a key={item.href} href={item.href} className="border-[1.5px] border-koord bg-wit p-5">
+            <a key={item.href} href={item.href} className="block h-full border-[1.5px] border-koord bg-wit p-5">
               <span className="font-display text-2xl font-extrabold text-haag">{item.title}</span>
               <span className="mt-2 block">{item.text}</span>
             </a>

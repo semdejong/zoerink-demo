@@ -24,7 +24,7 @@ export default function OffertePage() {
         <PhoneLink className="btn btn-haag">Bel {content.contact.phoneDisplay}</PhoneLink>
         <MailLink className="btn btn-line">{content.contact.email}</MailLink>
       </PageHero>
-      <section data-section="offerte" className="wrap grid items-start gap-8 pb-16 lg:grid-cols-[minmax(0,1fr)_18rem]">
+      <section data-section="offerte" className="wrap grid items-start gap-8 pb-16 lg:grid-cols-[minmax(0,1fr)_22rem]">
         <Suspense fallback={<OfferteForm dienst={null} ritme={null} />}>
           <OfferteGate />
         </Suspense>

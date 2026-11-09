@@ -105,14 +105,16 @@ export default function OfferteForm({ dienst, ritme }: OfferteFormProps) {
   return (
     <form onSubmit={submit} noValidate className="border-[1.5px] border-haag bg-wit p-4 sm:p-6" data-section="offerte-formulier">
       <div className="is-in relative mb-8">
-        <svg className="pointer-events-none absolute top-2 right-4 left-4 hidden h-6 sm:block" viewBox="0 0 1000 24" preserveAspectRatio="none" aria-hidden="true">
-          <line x1="30" y1="4" x2="970" y2="16" stroke="#E8890C" strokeWidth="2" vectorEffect="nonScalingStroke" pathLength="1" className="koord-line" />
+        <svg className="pointer-events-none absolute inset-x-0 top-0 hidden h-7 sm:block" width="100%" height="28" viewBox="0 0 1000 28" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="8" y1="14" x2="674" y2="14" stroke="#E8890C" strokeWidth="2" vectorEffect="nonScalingStroke" pathLength="1" className="koord-line" />
         </svg>
         <ol className="grid gap-4 sm:grid-cols-3" aria-label="Voortgang van de offerte">
           {stepLabels.map((label, index) => (
-            <li key={label} className="flex items-start gap-2" aria-current={step === index ? "step" : undefined}>
-              <Peg size="sm" />
-              <span className={`pt-1 font-mono text-[11px] uppercase leading-tight tracking-wide ${step === index ? "font-semibold text-haag" : "text-schors"}`}>
+            <li key={label} className="relative sm:pt-9" aria-current={step === index ? "step" : undefined}>
+              <span className="mb-1 inline-flex sm:absolute sm:top-0 sm:left-0 sm:mb-0">
+                <Peg size="sm" />
+              </span>
+              <span className={`block font-mono text-[11px] uppercase leading-tight tracking-wide ${step === index ? "font-semibold text-haag" : "text-schors"}`}>
                 {index + 1}. {label}
               </span>
             </li>

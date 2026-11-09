@@ -62,7 +62,7 @@ export default function PlantenPage() {
             { href: "/bestrating-schuttingen", title: "Bij de bestrating", text: "Tegels, gebakken keiklinkers, natuursteen, grind en split. Eerst zand, dan het materiaal." },
             { href: "/onderhoud-renovatie", title: "Bij onderhoud", text: "Haag, heesters en wat er bij een beurt vrijkomt. Afval en grond voer ik af." },
           ].map((item) => (
-            <a key={item.href} href={item.href} className="border-[1.5px] border-koord bg-wit p-5">
+            <a key={item.href} href={item.href} className="block h-full border-[1.5px] border-koord bg-wit p-5">
               <span className="font-display text-2xl font-extrabold text-haag">{item.title}</span>
               <span className="mt-2 block">{item.text}</span>
             </a>

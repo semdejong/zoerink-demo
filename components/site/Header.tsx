@@ -5,6 +5,7 @@ import { useEffect, useId, useState } from "react";
 import { usePathname } from "next/navigation";
 import { content } from "@/content";
 import Meetlint from "@/components/graphics/Meetlint";
+import SleadsBadge from "@/components/SleadsBadge";
 import { OfferteLink, PhoneLink } from "@/components/site/Links";
 
 export default function Header() {
@@ -48,7 +49,7 @@ export default function Header() {
             );
           })}
         </nav>
-        <PhoneLink className="inline-flex min-h-11 shrink-0 items-center px-1 text-[15px] font-semibold text-haag xl:btn xl:btn-line xl:px-3">
+        <PhoneLink className="inline-flex min-h-11 shrink-0 items-center px-1 text-[15px] font-semibold text-haag underline decoration-koord decoration-2 underline-offset-4">
           {content.contact.phoneDisplay}
         </PhoneLink>
         <OfferteLink className="btn btn-koord hidden shrink-0 xl:inline-flex">Offerte aanvragen</OfferteLink>
@@ -93,7 +94,10 @@ export default function Header() {
           </ul>
         </nav>
       ) : null}
-      <Meetlint label="Meetlint langs de kop van de pagina" />
+      <div className="relative">
+        <Meetlint label="Meetlint langs de kop van de pagina" />
+        <SleadsBadge />
+      </div>
     </header>
   );
 }

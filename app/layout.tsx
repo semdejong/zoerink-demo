@@ -3,7 +3,6 @@ import { Bitter, Instrument_Sans, Overpass_Mono } from "next/font/google";
 import type { CSSProperties } from "react";
 import "./globals.css";
 import { content } from "@/content";
-import SleadsBadge from "@/components/SleadsBadge";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import MobileBar from "@/components/site/MobileBar";
@@ -81,7 +80,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </div>
         <Footer />
         <MobileBar />
-        <SleadsBadge />
       </body>
     </html>
   );

@@ -20,7 +20,7 @@ export default function BestratingPage() {
     title: step.title,
     text: step.text,
     photo: photoByNumber(step.jobId, step.photoN),
-    photoCaption: jobById(step.jobId).title,
+    photoCaption: `Foto uit: ${jobById(step.jobId).title}`,
   }));
 
   return (
